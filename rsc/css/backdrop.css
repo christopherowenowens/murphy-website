@@ -1,0 +1,248 @@
+/* Copyright 2016  |  neXt  | Technology Solutions for the 21st Century
+/* www.nextslc.com | Christopher "Owen" Owens | owen@nextslc.com
+/* Murphy & The Giant
+/* Revision: May 18 2016 (Under Construction)
+/* 4s cycle time
+
+/* Graciously repurposed from codrops
+
+
+
+/* No animation failover */
+
+    .no-cssanimations .backdrop li span{
+    opacity: 1;
+    }
+
+/* general positioning */
+    .backdrop,
+    .backdrop:after { 
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 0; 
+    }
+    .backdrop:after { 
+        content: '';
+        background: black;
+        opacity:0.4;
+    }
+    .backdrop li span { 
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        color: transparent;
+        background-size: cover;
+        background-position: 20% 50%;
+        background-repeat: none;
+        opacity: 0;
+        z-index: 0;
+    	-webkit-backface-visibility: hidden;
+        -webkit-animation: imageAnimation 24s linear infinite 0s;
+        -moz-animation: imageAnimation 24s linear infinite 0s;
+        -o-animation: imageAnimation 24s linear infinite 0s;
+        -ms-animation: imageAnimation 24s linear infinite 0s;
+        animation: imageAnimation 24s linear infinite 0s; 
+    }
+    .backdrop li div { 
+        z-index: 1000;
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        color: #fff;
+        text-shadow: 5px 5px 5px #000;
+        -webkit-animation: titleAnimation 24s linear infinite 0s;
+        -moz-animation: titleAnimation 24s linear infinite 0s;
+        -o-animation: titleAnimation 24s linear infinite 0s;
+        -ms-animation: titleAnimation 24s linear infinite 0s;
+        animation: titleAnimation 24s linear infinite 0s; 
+    }
+    .backdrop li div h3 { 
+        font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+        font-size: 180px;
+        padding: 0;
+        line-height: 180px; 
+    }
+
+/* per element */
+    .backdrop li:nth-child(1) span { 
+        background-image: url(../img/trouble/1.jpg) 
+    }
+    .backdrop li:nth-child(2) span { 
+        background-image: url(../img/trouble/2.jpg);
+        -webkit-animation-delay: 4s;
+        -moz-animation-delay: 4s;
+        -o-animation-delay: 4s;
+        -ms-animation-delay: 4s;
+        animation-delay: 4s; 
+    }
+    .backdrop li:nth-child(3) span { 
+        background-image: url(../img/trouble/3.jpg);
+        -webkit-animation-delay: 8s;
+        -moz-animation-delay: 8s;
+        -o-animation-delay: 8s;
+        -ms-animation-delay: 8s;
+        animation-delay: 8s; 
+    }
+    .backdrop li:nth-child(4) span { 
+        background-image: url(../img/trouble/4.jpg);
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        animation-delay: 12s; 
+    }
+    .backdrop li:nth-child(5) span { 
+        background-image: url(../img/trouble/5.jpg);
+        -webkit-animation-delay: 16s;
+        -moz-animation-delay: 16s;
+        -o-animation-delay: 16s;
+        -ms-animation-delay: 16s;
+        animation-delay: 16s; 
+    }
+    .backdrop li:nth-child(6) span { 
+        background-image: url(../img/trouble/6.jpg);
+        -webkit-animation-delay: 20s;
+        -moz-animation-delay: 20s;
+        -o-animation-delay: 20s;
+        -ms-animation-delay: 20s;
+        animation-delay: 20s; 
+    }
+    .backdrop li:nth-child(2) div { 
+        -webkit-animation-delay: 4s;
+        -moz-animation-delay: 4s;
+        -o-animation-delay: 4s;
+        -ms-animation-delay: 4s;
+        animation-delay: 4s; 
+    }
+    .backdrop li:nth-child(3) div { 
+        -webkit-animation-delay: 8s;
+        -moz-animation-delay: 8s;
+        -o-animation-delay: 8s;
+        -ms-animation-delay: 8s;
+        animation-delay: 8s; 
+    }
+    .backdrop li:nth-child(4) div { 
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        animation-delay: 12s; 
+    }
+    .backdrop li:nth-child(5) div { 
+        -webkit-animation-delay: 16s;
+        -moz-animation-delay: 16s;
+        -o-animation-delay: 16s;
+        -ms-animation-delay: 16s;
+        animation-delay: 16s; 
+    }
+    .backdrop li:nth-child(6) div { 
+        -webkit-animation-delay: 20s;
+        -moz-animation-delay: 20s;
+        -o-animation-delay: 20s;
+        -ms-animation-delay: 20s;
+        animation-delay: 20s; 
+    }
+
+/* Animation for the BG */
+
+    @-webkit-keyframes imageAnimation { 
+        0% { opacity: 0;
+        -webkit-animation-timing-function: ease-in; }
+        8% { opacity: 1;
+             -webkit-animation-timing-function: ease-out; }
+        17% { opacity: 1 }
+        25% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @-moz-keyframes imageAnimation { 
+        0% { opacity: 0;
+        -moz-animation-timing-function: ease-in; }
+        8% { opacity: 1;
+             -moz-animation-timing-function: ease-out; }
+        17% { opacity: 1 }
+        25% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @-o-keyframes imageAnimation { 
+        0% { opacity: 0;
+        -o-animation-timing-function: ease-in; }
+        8% { opacity: 1;
+             -o-animation-timing-function: ease-out; }
+        17% { opacity: 1 }
+        25% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @-ms-keyframes imageAnimation { 
+        0% { opacity: 0;
+        -ms-animation-timing-function: ease-in; }
+        8% { opacity: 1;
+             -ms-animation-timing-function: ease-out; }
+        17% { opacity: 1 }
+        25% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @keyframes imageAnimation { 
+        0% { opacity: 0;
+        animation-timing-function: ease-in; }
+        8% { opacity: 1;
+             animation-timing-function: ease-out; }
+        17% { opacity: 1 }
+        25% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+
+/* Animation for the text */
+
+    @-webkit-keyframes titleAnimation { 
+        0% { opacity: 0 }
+        8% { opacity: 1 }
+        17% { opacity: 1 }
+        19% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @-moz-keyframes titleAnimation { 
+        0% { opacity: 0 }
+        8% { opacity: 1 }
+        17% { opacity: 1 }
+        19% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @-o-keyframes titleAnimation { 
+        0% { opacity: 0 }
+        8% { opacity: 1 }
+        17% { opacity: 1 }
+        19% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @-ms-keyframes titleAnimation { 
+        0% { opacity: 0 }
+        8% { opacity: 1 }
+        17% { opacity: 1 }
+        19% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+    @keyframes titleAnimation { 
+        0% { opacity: 0 }
+        8% { opacity: 1 }
+        17% { opacity: 1 }
+        19% { opacity: 0 }
+        100% { opacity: 0 }
+    }
+
+/* media - must come at end */
+
+    @media screen and (max-width: 1140px) {
+      .backdrop li div h3 { font-size: 120px; line-height:120px; }
+    }
+
+    @media screen and (max-width: 600px) { 
+      .backdrop li div h3 { font-size: 50px; line-height:50px; }
+    }
